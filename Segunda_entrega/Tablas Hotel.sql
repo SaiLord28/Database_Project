@@ -1,4 +1,5 @@
 DROP SCHEMA IF EXISTS Hotel CASCADE;
+CREATE EXTENSION IF NOT EXISTS btree_gist;
 
 CREATE SCHEMA Hotel;
 SET search_path TO Hotel;
@@ -243,6 +244,13 @@ ALTER TABLE Servicio ADD CONSTRAINT CK_idServicio CHECK(idServicio > 0);
 ALTER TABLE Servicio ADD CONSTRAINT CK_precioServicio CHECK(precioServicio >= 0);
 
 ALTER TABLE Reserva ADD CONSTRAINT CK_fechaReserva CHECK(fechaLlegada < fechaSalida);
+ALTER TABLE Reserva
+    ADD CONSTRAINT reserva_sin_solapamientos
+    EXCLUDE USING GIST (
+        idHabitacion WITH =,
+        tsrange(fechaLlegada, fechaSalida, '[)') WITH &&
+    );
+
 
 ALTER TABLE Consume ADD CONSTRAINT CK_fechaUsoConsume CHECK(fechaUso >= fechaLlegada);
 ALTER TABLE Consume ADD CONSTRAINT CK_fechas_Consume CHECK(fechaSalida >= fechaLlegada);
