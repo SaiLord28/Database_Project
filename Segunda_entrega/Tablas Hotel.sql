@@ -263,5 +263,3 @@ ADD CONSTRAINT UQ_TelefonoCliente UNIQUE (telefono);
 
 ALTER TABLE EmailCliente
 ADD CONSTRAINT UQ_EmailCliente UNIQUE (email);
-
-
