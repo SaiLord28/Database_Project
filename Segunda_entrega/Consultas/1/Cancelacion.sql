@@ -4,7 +4,6 @@ CREATE VIEW Cancelacion AS
 SELECT
     DNI,
     idHabitacion,
-    precioReserva,
     fechaLlegada,
     fechaSalida,
     (fechaLlegada - INTERVAL '7 days') AS tiempoMaximoCancelacion
