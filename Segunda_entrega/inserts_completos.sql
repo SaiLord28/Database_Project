@@ -98,7 +98,7 @@ INSERT INTO Empleado (DNIEmpleado, primerNombre, segundoNombre, primerApellido, 
 (2009, 'Valeria', NULL, 'Jimenez', 'Mendoza', 'Calle 22', 'Carrera 9', '22-99', 'Guardia de seguridad', 5);
 
 -- EmailEmpleado table
-INSERT INTO EmailEmpleado (DNIEmpleado, Email) VALUES
+INSERT INTO EmailEmpleado (DNIEmpleado, EmailEmpleado) VALUES
 (2001, 'ana.martinez@hotelstaff.com'),
 (2002, 'javier.gonzalez@hotelstaff.com'),
 (2002, 'j.gonzalez.t@hotelstaff.com'),
@@ -113,7 +113,7 @@ INSERT INTO EmailEmpleado (DNIEmpleado, Email) VALUES
 (2009, 'v.jimenez.mendoza@hotelstaff.com');
 
 -- TelefonoEmpleado table
-INSERT INTO TelefonoEmpleado (DNIEmpleado, Telefono) VALUES
+INSERT INTO TelefonoEmpleado (DNIEmpleado, TelefonoEmpleado) VALUES
 (2001, '3115551234'),
 (2002, '3126667890'),
 (2003, '3134445678'),
